@@ -34,3 +34,4 @@ build/
 .mvn
 .history
 
+/src/main/java/com/financialmovement/utils/test.java
