@@ -15,7 +15,6 @@ public class Movement {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  @ManyToOne
   private Type type; // tipo e um enum Receita, despesa, transferencia
   private String description;
   private Date dateInput;
