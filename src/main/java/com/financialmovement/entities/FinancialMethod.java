@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_finacialmethod")
+@Table(name = "tb_financialmethod")
 public class FinancialMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,16 @@ public class FinancialMethod {
     private int percente;
     private String description;
 
-    public FinancialMethod(String description, int percente) {
+    public FinancialMethod() {
+    }
+
+    public FinancialMethod(int percente, String description) {
+        this.percente = percente;
+        this.description = description;
+    }
+
+    public FinancialMethod(Long id, String description, int percente) {
+        this.id = id;
         this.percente = percente;
         this.description = description;
     }
@@ -80,7 +89,7 @@ public class FinancialMethod {
 
     @Override
     public String toString() {
-        return "FinancialMethod [ percente=" + percente + ", description=" + description + "]";
+        return "FinancialMethod [ percente= " + percente + ", description= " + description + "]";
     }
 
 }

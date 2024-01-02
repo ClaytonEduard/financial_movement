@@ -13,7 +13,7 @@ public class FinancialMethodService {
 
     @Autowired
     private FinancialMethodRepository repository;
-    private static final int LIMIT_PERCENT = 100;
+    public static final int LIMIT_PERCENT = 100;
 
     public List<FinancialMethod> getFinancialMethods() {
         return (List<FinancialMethod>) repository.findAll();
@@ -31,6 +31,18 @@ public class FinancialMethodService {
     private int calcSumTotal() {
         List<FinancialMethod> financialMethods = (List<FinancialMethod>) repository.findAll();
         return financialMethods.stream().mapToInt(FinancialMethod::getPercente).sum();
+    }
+
+    public void updateFinancialMethod(FinancialMethod financialMethod, Long id) {
+        repository.save(financialMethod);
+    };
+
+    public void delete(long id) {
+        repository.deleteById(id);
+    }
+
+    public FinancialMethod getFinancialMethodBy(long id) {
+        return repository.findById(id).get();
     }
 
 }
