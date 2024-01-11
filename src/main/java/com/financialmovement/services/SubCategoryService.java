@@ -32,7 +32,6 @@ public class SubCategoryService {
         return categories;
     }
 
-
     public SubCategory getSubCategory(Long id) {
         return subCategoryRepository.findById(id).get();
     }
@@ -49,6 +48,13 @@ public class SubCategoryService {
         subCategory.setCategoryid(cat);
         subCategoryRepository.save(subCategory);
         return subCategory;
+    }
+
+    public void update (SubCategory subCategory, long id){
+        subCategoryRepository.save(subCategory);
+    }
+    public void delete(long id){
+        subCategoryRepository.deleteById(id);
     }
 
 
