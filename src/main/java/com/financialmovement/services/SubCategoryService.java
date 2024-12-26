@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.springframework.util.Assert.notNull;
 
@@ -50,13 +49,13 @@ public class SubCategoryService {
         return subCategory;
     }
 
-    public void update (SubCategory subCategory, long id){
+    public void update(SubCategory subCategory, long id) {
         subCategoryRepository.save(subCategory);
     }
-    public void delete(long id){
+
+    public void delete(long id) {
         subCategoryRepository.deleteById(id);
     }
-
 
 
 }

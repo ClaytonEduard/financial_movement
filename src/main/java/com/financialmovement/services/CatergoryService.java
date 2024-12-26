@@ -1,14 +1,13 @@
 package com.financialmovement.services;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.financialmovement.entities.Category;
+import com.financialmovement.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.financialmovement.entities.Category;
-import com.financialmovement.repositories.CategoryRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.springframework.util.Assert.notNull;
 
@@ -18,7 +17,9 @@ public class CatergoryService {
     @Autowired
     private CategoryRepository repository;
 
-    public CatergoryService(CategoryRepository categoryRepository){ this.repository = categoryRepository;}
+    public CatergoryService(CategoryRepository categoryRepository) {
+        this.repository = categoryRepository;
+    }
 
     public List<Category> getAllCategorys() {
         List<Category> categorys = new ArrayList<>();
@@ -32,18 +33,18 @@ public class CatergoryService {
     }
 
     // pesquisar por description
-    public List<Category> findCategoriesForDescription(String description){
+    public List<Category> findCategoriesForDescription(String description) {
         notNull(description, "Descrição é obrigatória!");
         List<Category> categories = getAllCategorys();
         categories.stream().filter(category -> category.getDescription().equals(description)).collect(Collectors.toList());
         return categories;
     }
 
-    public Category findCategoryDescription(String description){
+    public Category findCategoryDescription(String description) {
         notNull(description, "Descrição é obrigatória!");
         List<Category> categories = getAllCategorys();
-       Category c = (Category) categories.stream().filter(category -> category.getDescription().equals(description)).findFirst().get();
-       return  c;
+        Category c = (Category) categories.stream().filter(category -> category.getDescription().equals(description)).findFirst().get();
+        return c;
     }
 
     // save our update

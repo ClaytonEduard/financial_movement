@@ -1,19 +1,18 @@
 package com.financialmovement.services;
 
-import java.util.List;
-
+import com.financialmovement.entities.FinancialMethod;
+import com.financialmovement.repositories.FinancialMethodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.financialmovement.entities.FinancialMethod;
-import com.financialmovement.repositories.FinancialMethodRepository;
+import java.util.List;
 
 @Service
 public class FinancialMethodService {
 
+    public static final int LIMIT_PERCENT = 100;
     @Autowired
     private FinancialMethodRepository repository;
-    public static final int LIMIT_PERCENT = 100;
 
     public List<FinancialMethod> getFinancialMethods() {
         return (List<FinancialMethod>) repository.findAll();
@@ -35,13 +34,13 @@ public class FinancialMethodService {
 
     public void updateFinancialMethod(FinancialMethod financialMethod, Long id) {
         repository.save(financialMethod);
-    };
+    }
 
     public void delete(long id) {
         repository.deleteById(id);
     }
 
-    public FinancialMethod getFinancialMethodBy(long id) {
+    public FinancialMethod getFinancialMethodById(long id) {
         return repository.findById(id).get();
     }
 

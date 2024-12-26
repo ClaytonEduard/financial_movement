@@ -1,10 +1,6 @@
 package com.financialmovement.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_financialmethod")
@@ -33,16 +29,16 @@ public class FinancialMethod {
         return percente;
     }
 
+    public void setPercente(int percente) {
+        this.percente = percente;
+    }
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setPercente(int percente) {
-        this.percente = percente;
     }
 
     public String getDescription() {

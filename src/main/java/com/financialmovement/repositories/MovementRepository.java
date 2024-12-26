@@ -1,9 +1,8 @@
 package com.financialmovement.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.financialmovement.entities.Movement;
+import org.springframework.data.repository.CrudRepository;
 
-public interface MovementRepository extends JpaRepository<Movement, Long>{
+public interface MovementRepository extends CrudRepository<Movement, Long> {
 
 }

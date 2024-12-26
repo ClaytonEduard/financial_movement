@@ -2,7 +2,6 @@ package com.financialmovement.categories.repositories;
 
 import com.financialmovement.entities.Category;
 import com.financialmovement.repositories.CategoryRepository;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 @ActiveProfiles("test")// anotacao para buscar o arquivo application-test
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Disabled
 class CategoryRepositoryTest {
     @Autowired
     CategoryRepository categoryRepository;

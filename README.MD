@@ -1,6 +1,5 @@
 # Financeiro
 
-
 ```
 Aplicativo de agendamento, voltado para profissionais de salão de beleza.
 # Objetivo
